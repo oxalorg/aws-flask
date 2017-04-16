@@ -1,0 +1,13 @@
+<body>
+{% if post is not defined %}
+{% set post = None %}
+{% endif %}
+<form action="" method="post">
+
+    <input type="text" name="title" placeholder="Title" value="{{ post.title or '' }}"><br>
+    <input type="text" name="slug" placeholder="url slug" value="{{ post.slug or ''}}"><br>
+    <textarea name="body" rows="40" cols="80">{{ post.body or ''}}</textarea><br>
+    <button type="submit">Submit</button><br>
+</form>
+
+</body>

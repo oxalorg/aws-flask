@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>oxblog</title>
+</head>
+<body>
+{% for post in posts %}
+{{ post.id }}: <a href="/{{ post.slug }}">{{ post.title }}</a>
+{% endfor %}
+</body>
+</html>
