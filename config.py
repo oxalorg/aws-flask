@@ -19,7 +19,10 @@ class DevelopmentConfig(Config):
 
 
 class ProductionConfig(Config):
-    pass
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://' \
+                                + os.environ['DB_USERNAME'] + ':' + os.environ['DB_PASSWORD'] \
+                                +'@' + os.environ['DB_HOSTNAME']  +  ':' + os.environ['DB_PORT'] \
+                                + '/' + os.environ['DB_NAME']
 
 
 class TestingConfig(Config):
